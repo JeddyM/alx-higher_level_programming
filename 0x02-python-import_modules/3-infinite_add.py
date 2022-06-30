@@ -6,5 +6,4 @@ if __name__ == "__main__":
     for i in range(position):
         argument = sys.argv[i + 1]
         result += int(argument)
-    print("{}".format(result))
-        
+    print("{}".format(result))  
