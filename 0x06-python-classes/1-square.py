@@ -7,6 +7,6 @@ class Square:
         """Initialize the square class
 
         Args:
-        size(int):  size is a private instance attribute
+            size(int):  size is a private instance attribute
         """
         self.__size = size
