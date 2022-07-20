@@ -9,7 +9,7 @@ class Square:
 
         Args:
             size(int):  size is a private instance attribute
-            position(int): poosition of the new square
+            position(int): position of the new square
         """
         self.__size = size
         self.__position = position
