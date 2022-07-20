@@ -1,5 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/python3:wq
+
 """Square module"""
+
 
 class Square:
     """class Square"""
@@ -25,10 +27,12 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
     @property
     def position(self):
         """Get current postion of the square"""
         return (self.__position)
+
     @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or
@@ -39,11 +43,7 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Returns the current square area
-
-        Returns:
-            size squared
-        """
+        """Returns the current square  area"""
         return (self.__size ** 2)
 
     def my_print(self):
