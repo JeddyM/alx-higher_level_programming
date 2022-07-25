@@ -51,3 +51,25 @@ class Rectangle:
         if value < 0:
             raise ValueError('height must be >= 0')
         self.__height = value
+
+    def area(self):
+        """Methodd that returns area of rectangle"""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Return rectangle perimeter"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width + self.__height) * 2
+
+    def __str__(self):
+        """Print the rectangle with the character #"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        for row in range(self.__height - 1):
+            print("#" * self.__width)
+        return ('#' * self.__width)
+
+    def __repr__(self):
+        """Return a string representation of the rectangle"""
+        return ("Rectangle({}, {})".format(self.__width, self.__height))
