@@ -1,6 +1,34 @@
->>> add_integer= __import__('0-add_integer').add-integer
+The 0-add_integer.py test suite
+
+Using ```add-integer```
+------------------------
+
+>>> add_integer= __import__('0-add_integer').add_integer
 
 ========
-
->>>add(2,9)
+>>> add_integer(2, 9)
 11
+
+>>> add_integer(2, -9)
+-7
+
+>>> add_integer(2.5, -1)
+1
+
+>>> add_integer(10)
+108
+
+>>> add_integer("Grit", 1) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(3, "Mary")#doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(None) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
