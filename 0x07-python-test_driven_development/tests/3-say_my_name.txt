@@ -1,0 +1,44 @@
+The 3-say_my_name.py test suite
+
+Using ```say_my_name```
+------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+========
+>>> say_my_name('Jeddy', 'Mweru')
+My name is Jeddy Mweru
+
+
+>>> say_my_name("Jeddy") #doctest: +REPORT_NDIFF
+My name is Jeddy 
+
+INVALID PARAMETERS
+==================
+
+No parameters
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Number
+>>> say_my_name(45)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+String and number
+>>> say_my_name("Jeddy", 45)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Number and string
+>>> say_my_name(45, "Mweru")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+no parameter
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
