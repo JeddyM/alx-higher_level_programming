@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""""""
+"""Module for sprint square function"""
+
+
 def print_square(size):
     """prints a square with the character #"""
     if isinstance(size, int) is False:
