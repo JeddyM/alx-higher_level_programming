@@ -1,0 +1,48 @@
+The 7-base_geometry.py test suite
+
+Using ```BaseGeometry```
+------------------
+
+command to test doctest
+python3 -m doctest -v ./tests/7-base_geometry.txt
+
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+============
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator('Width', 58)
+
+
+Value less than 0
+>>> bg.integer_validator('width', -58)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
+
+
+Value 0
+>>> bg.integer_validator('speed', 0)
+Traceback (most recent call last):
+...
+ValueError: speed must be greater than 0
+
+No parameters
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator('Speed')
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+>>> bg.integer_validator(99)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator('height', 'tall')
