@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines Module for 6-base_geometry.py"""
 
+
 class BaseGeometry:
     """Class"""
     def area(self):
