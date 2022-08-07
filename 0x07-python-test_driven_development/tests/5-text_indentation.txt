@@ -1,0 +1,57 @@
+The 5-text_indentation.py test suite
+
+Using ```text_indentation```
+------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+========
+>>> text_indentation("Awesome?")
+Awesome?
+<BLANKLINE>
+
+>>> text_indentation("Awesome.day")
+Awesome.
+<BLANKLINE>
+day
+
+>>> text_indentation("My.name?How are you:Jeddy")
+My.
+<BLANKLINE>
+name?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+Jeddy
+
+>>> text_indentation(34)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("No special characters")
+No special characters
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+No text parameter case
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+Blank text case
+>>> text_indentation("      ")
+
+
+>>> text_indentation("Unfailing love:      it is something so?   ")
+Unfailing love:
+<BLANKLINE>
+it is something so?
+<BLANKLINE>
+
+>>> text_indentation({"mary", 78})
+Traceback (most recent call last):
+TypeError: text must be a string
