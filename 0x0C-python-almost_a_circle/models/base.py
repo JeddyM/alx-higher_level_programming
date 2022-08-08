@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """The base class module"""
 
+
 class Base:
     """The base class"""
 
-    private class attribute __nb_objects = 0
+    __nb_objects = 0
 
     def __init__(self, id=None):
         """Initialized method
@@ -13,8 +14,6 @@ class Base:
         """
         if id is not None:
             self.id = id
-        else
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
-        
