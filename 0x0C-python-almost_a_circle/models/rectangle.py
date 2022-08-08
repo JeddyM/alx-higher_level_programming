@@ -53,7 +53,7 @@ class Rectangle(Base):
             value: value
         """
         if type(value) is not int:
-            raise TypeError("height must be be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -105,3 +105,8 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
+    def update(self, *args):
+        """"Assigns an argument to each attribute
+        Args:
+            arguments
+        """
