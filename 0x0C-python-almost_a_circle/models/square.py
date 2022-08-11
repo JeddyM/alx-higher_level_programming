@@ -33,6 +33,7 @@ class Square(Rectangle):
 
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
+
     def update(self, *args, **kwargs):
         """"Assigns an argument to each attribute
         Args:
@@ -49,7 +50,7 @@ class Square(Rectangle):
                 '''setatr maps key to value for **kwargs'''
                 setattr(self, key, value)
 
-def to_dictionary(self):
+    def to_dictionary(self):
         """Returns the dictionary representation of a square
         Return:
             dictionary: with id, size x & y
