@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """The base class module"""
 
+import json
+
 
 class Base:
     """The base class"""
@@ -17,3 +19,69 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """returns the JSON string representation of list_dictionaries
+        Args:
+            list_dictionaries:list of dictionaries
+        Return:
+            If list_dictionaries is None || empty return  "[]"
+        """
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file
+        Args:
+            cls:
+            list_objs:a list of instances who inherits of Base
+        """
+        if list_objs is None:
+            fc = "[]"
+        else:
+            fc = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+        with open(cls.__name__ + '.json', 'w') as f:
+            f.write(fc)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation
+        Args:
+            json_string:string representing a list of dictionaries
+        """
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set
+        Args:
+            dictionary:double pointer to a dictionary
+        """
+        """Creating dummy instance that is square and rectangle"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances
+        Args:
+            none
+        """
+        try:
+            with open(cls.__name__ + '.json', 'r') as f:
+                json_list = cls.from_json_string(f.read())
+                obj_list = []
+                for i in json_list:
+                    obj_list.append(cls.create(**i))
+                return obj_list
+        except FileNotFoundError:
+            return []

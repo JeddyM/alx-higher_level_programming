@@ -15,7 +15,6 @@ class Square(Rectangle):
             y: y-axis/ coordinate
             id: object id
         """
-        self.size = size
         super().__init__(size, size, x, y, id)
 
     @property
@@ -34,3 +33,25 @@ class Square(Rectangle):
 
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
+    def update(self, *args, **kwargs):
+        """"Assigns an argument to each attribute
+        Args:
+            non
+        """
+        if args:
+            listargs = ['id', 'width', 'height', 'x', 'y']
+            i = 0
+            for arg in args:
+                setattr(self, listargs[i], arg)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                '''setatr maps key to value for **kwargs'''
+                setattr(self, key, value)
+
+def to_dictionary(self):
+        """Returns the dictionary representation of a square
+        Return:
+            dictionary: with id, size x & y
+        """
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
