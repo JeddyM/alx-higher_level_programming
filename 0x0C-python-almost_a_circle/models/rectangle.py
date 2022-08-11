@@ -18,11 +18,11 @@ class Rectangle(Base):
             y: y-axis of rectangle
             id: rectangle id
         """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -105,6 +105,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
+
     def update(self, *args):
         """"Assigns an argument to each attribute
         Args:
