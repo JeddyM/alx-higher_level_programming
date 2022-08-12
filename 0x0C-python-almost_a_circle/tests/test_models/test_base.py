@@ -35,7 +35,7 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(base_json, str)
         base_json = Base.to_json_string(None)
         self.assertIsInstance(base_json, str)
-        base_json = Base.to_json_string([ { 'id': 12 }])
+        base_json = Base.to_json_string([{'id': 12}])
         self.assertIsInstance(base_json, str)
 
     def test_from_json_string(self):
@@ -51,3 +51,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual([], base_obj)
         base_obj = Base.from_json_string('[{ "id": 89 }]')
         self.assertIsInstance(base_obj, list)
+
+
+if __name__ == '__main__':
+    unittest.main()
