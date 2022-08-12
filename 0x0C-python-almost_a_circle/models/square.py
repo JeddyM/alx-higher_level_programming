@@ -40,11 +40,12 @@ class Square(Rectangle):
             non
         """
         if args:
-            listargs = ['id', 'width', 'height', 'x', 'y']
             i = 0
+            listargs = ['id', 'size', 'x', 'y']
             for arg in args:
                 setattr(self, listargs[i], arg)
                 i += 1
+            return
         else:
             for key, value in kwargs.items():
                 '''setatr maps key to value for **kwargs'''
