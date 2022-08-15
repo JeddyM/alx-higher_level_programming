@@ -2,6 +2,7 @@
 """The base class module"""
 
 import json
+import turtle
 
 
 class Base:
@@ -85,3 +86,40 @@ class Base:
                 return obj_list
         except FileNotFoundError:
             return []
+
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares
+        Args:
+            list_rectangles: rectangles with various dimensions
+            list_squares: squares with various dimensions
+        """
+        '''Creating a turtle with Turtle() and the screen'''
+        t = turtle.Turtle()
+        wn = turtle.Screen()
+        wn.bgcolor("black")
+        t.pensize(2)
+        t.speed(0)
+
+        t.color("purple")
+        for i in list_rectangles:
+            t.up()
+            t.setpos(i.x, i.y)
+            t.down()
+            for j in range(2):
+                t.forward(i.width)
+                t.left(90)
+                t.forward(i.height)
+                t.left(90)
+
+        t.color("orange")
+        for i in list_squares:
+            t.up()
+            t.setpos(i.x, i.y)
+            t.down()
+            for j in range(2):
+                t.forward(i.width)
+                t.left(90)
+                t.forward(i.height)
+                t.left(90)
+
+    turtle.exitonclick()
