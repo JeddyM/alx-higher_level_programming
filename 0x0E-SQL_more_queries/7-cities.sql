@@ -2,7 +2,7 @@
 -- description id INT unique, auto generated, not null & is primary key
 -- state_id INT, not null, must be FOREIGN KEY that references to id of states
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities (
+CREATE TABLE IF NOT EXISTS cities (
         id INT NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(256) NOT NULL,
 	state_id INT NOT NULL,
