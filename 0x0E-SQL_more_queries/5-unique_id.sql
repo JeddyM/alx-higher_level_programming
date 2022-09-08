@@ -2,6 +2,6 @@
 -- Description id INT with the default value 1 must be uniques
 -- name VARCHAR(256)
 CREATE DATABASE IF NOT EXISTS unique_id (
-	INT DEFAULT 1 UNIQUE,
+	id INT DEFAULT 1 UNIQUE,
 	name VARCHAR(256)
 	);
