@@ -1,4 +1,5 @@
 #!/usr/bin/node
+//computes and prints a factorial
 let num = parseInt(process.argv[2]);
 function factorial (num) {
 	if (num === 1 || isNaN(num)) {
