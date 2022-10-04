@@ -6,4 +6,10 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
+
+  print () {
+    for (let i = 0; i < this.height; i++) {
+      console.log(Array(this.width + 1).join('X'));
+    }
+  }
 };
