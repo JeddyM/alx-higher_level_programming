@@ -7,7 +7,7 @@ module.exports = class Square extends Squareprint {
       this.print();
     } else {
       for (let i = 0; i < this.height; i++) {
-        console.log(Array(this.width + 1).join(c));
+        console.log(Array(this.height + 1).join(c));
       }
     }
   }
