@@ -14,7 +14,7 @@ if __name__ == "__main__":
     session = Session(engine)
     results = session.query(State).filter(State.id == 1)
     for instance in results:
-        if(results == ()):
-            print("Nothing")
-        else:
+        if(results):
             print("{}: {}".format(instance.id, instance.name))
+        else:
+            print("Nothing")
