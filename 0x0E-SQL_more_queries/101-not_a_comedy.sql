@@ -1,6 +1,6 @@
 -- ists all shows without the genre Comedy in the database hbtn_0d_tvshows
 -- Each record should display: tv_shows.title, results in ascending order
-SELECT tv_genres.title
+SELECT tv_shows.title
 FROM tv_shows
 WHERE tv_shows.title NOT IN
       (SELECT tvs.title
